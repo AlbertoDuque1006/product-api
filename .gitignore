@@ -1,9 +1,30 @@
-*.swp
-__pycache__
-.pytest_cache
-.venv
-*.egg-info
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
 
-# CDK asset staging directory
-.cdk.staging
-cdk.out
+# Virtual environment
+.venv/
+venv/
+
+# AWS CDK
+cdk.out/
+.cdk.staging/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# AWS credentials
+.aws/
+
+# macOS
+.DS_Store
+__MACOSX/
+
+# Editors
+*.swp
+.vscode/
+.idea/
