@@ -1,5 +1,11 @@
 # Product API — Serverless REST API with AWS CDK
 
+![Python](https://img.shields.io/badge/Python%203.12-3776AB?style=flat&logo=python&logoColor=white)
+![AWS Lambda](https://img.shields.io/badge/AWS%20Lambda-FF9900?style=flat&logo=awslambda&logoColor=white)
+![API Gateway](https://img.shields.io/badge/API%20Gateway-FF4F8B?style=flat&logo=amazonapigateway&logoColor=white)
+![AWS CDK](https://img.shields.io/badge/AWS%20CDK-232F3E?style=flat&logo=amazonwebservices&logoColor=white)
+![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
+
 A serverless REST API built with **Python**, **AWS Lambda**, **Amazon API Gateway**, and **AWS CDK**.
 
 This project was created as a practical implementation of Infrastructure as Code (IaC), demonstrating how to define, deploy, and manage a simple REST API entirely from code.
@@ -15,35 +21,20 @@ A client sends an HTTP request to Amazon API Gateway. API Gateway invokes an AWS
 ### Request flow
 
 ```text
-
 Client
-
   │
-
   │ GET /products/{id}
-
   ▼
-
 Amazon API Gateway
-
   │
-
   ▼
-
 AWS Lambda
-
   │
-
   ▼
-
 Product Data
-
   │
-
   ▼
-
 JSON Response
-
 ```
 
 The infrastructure is defined using **AWS CDK with Python**, allowing the complete AWS environment to be created and updated from source code.
@@ -109,53 +100,29 @@ The project currently provisions the following AWS resources:
 ## Project Structure
 
 ```text
-
 product-api/
-
 │
-
 ├── lambda_code/
-
 │   ├── get_product.py
-
 │   ├── productos.py
-
 │   └── responses.py
-
 │
-
 ├── product_api/
-
 │   ├── __init__.py
-
 │   └── product_api_stack.py
-
 │
-
 ├── tests/
-
 │   ├── __init__.py
-
 │   └── unit/
-
 │       ├── __init__.py
-
 │       └── test_product_api_stack.py
-
 │
-
 ├── app.py
-
 ├── cdk.json
-
 ├── requirements.txt
-
 ├── requirements-dev.txt
-
 ├── .gitignore
-
 └── README.md
-
 ```
 
 ### `lambda_code/`
@@ -183,25 +150,15 @@ Contains the AWS infrastructure definition.
 Defines the AWS resources using CDK:
 
 ```text
-
 API Gateway
-
       │
-
       ▼
-
 /products/{id}
-
       │
-
      GET
-
       │
-
       ▼
-
 AWS Lambda
-
 ```
 
 ---
@@ -380,7 +337,7 @@ This makes the infrastructure reproducible and version-controlled.
 
 ```bash
 
-git clone <repository-url>
+git clone https://github.com/AlbertoDuque1006/product-api.git
 
 cd product-api
 
@@ -505,37 +462,21 @@ cdk deploy
 CDK will:
 
 ```text
-
 Python CDK Code
-
       │
-
       ▼
-
 cdk synth
-
       │
-
       ▼
-
 CloudFormation Template
-
       │
-
       ▼
-
 AWS CloudFormation
-
       │
-
       ├── IAM Role
-
       ├── Lambda
-
       ├── API Gateway
-
       └── CloudWatch Logs
-
 ```
 
 After deployment, CDK outputs the API Gateway base URL.
@@ -619,27 +560,16 @@ Sensitive AWS information is intentionally excluded from version control.
 The repository ignores local and generated files such as:
 
 ```text
-
 .venv/
-
 venv/
-
 cdk.out/
-
 .cdk.staging/
-
 .env
-
 .env.*
-
 .aws/
-
 .DS_Store
-
 .vscode/
-
 .idea/
-
 ```
 
 AWS credentials should be managed through the AWS CLI or another supported AWS authentication mechanism rather than stored in source code.
@@ -724,4 +654,4 @@ GitHub: `AlbertoDuque1006`
 
 ## License
 
-This project is intended for educational and portfolio purposes.
+[MIT](./LICENSE) © Alberto José Duque Gámez
